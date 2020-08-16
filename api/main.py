@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from hangar import Repository
 
 stockboard = FastAPI()
-repo_path = '~/jjmachan/stockroom-tests/stockboard-tests'
+repo_path = '/data'
 checkout = ''
 
 
@@ -24,11 +24,11 @@ async def data_view():
     return a the list of Columns we have in the current repo.
     """
     columns = checkout.columns
-    return_dict = {}
+    return_dict = []
 
     for col in columns:
 
-        return_dict[col] = {
+        return_dict.append({
                 'len': len(columns[col]),
                 'name': col,
                 'dtype': str(columns[col].dtype),
@@ -38,7 +38,7 @@ async def data_view():
                 'schema_type': columns[col].schema_type,
                 'shape': columns[col].shape,
                 'backend': columns[col].backend
-                }
+                })
     return return_dict
 
 

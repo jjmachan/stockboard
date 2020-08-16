@@ -19,7 +19,7 @@ This is the recomment way if you want to just try this out. (make sure you have 
 
 1. Clone the repo and cd to directory
 ```
-$ git clone 
+$ git clone https://github.com/jjmachan/stockboard
 $ cd stockboard
 ```
 
@@ -30,7 +30,7 @@ $  docker build -t stockboard .
 
 3. Run the docker container
 ```
-docker run -p 8000:8000 -v /path/to/stock/repo:/data stockboard
+$ docker run -p 8000:8000 -v /path/to/stock/repo:/data stockboard
 ```
 
 ### directly
